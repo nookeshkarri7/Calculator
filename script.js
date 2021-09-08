@@ -42,6 +42,11 @@ let operations={
 let givenOperations=""
 let enteredValues=""
 
+let slicedString={
+    string:""
+}
+givenOperations=slicedString.string
+
 clearBtnEl.onclick=function(){
     valuesEl.textContent=""
     answerEl.textContent="Answer : 0"
@@ -131,17 +136,9 @@ percentBtnEl.onclick=function(){
         answerEl.textContent="Please enter number first"
     }
 }
-backspaceBtnEl.onclick=function(){
-    let n=givenOperations.length
-    if (enteredValues!=""){
-        let newgivenOperations=enteredValues.slice(0,n)
-        valuesEl.textContent=newgivenOperations
-        givenOperations=newgivenOperations
-    }
-    else{
-        answerEl.textContent="Please enter number first"
-    }
-}
+
+
+
 
 //division operation
 divideBtnEl.onclick=function(){
@@ -196,6 +193,17 @@ plusBtnEl.onclick=function(){
     }
     else{
         answerEl.textContent="Please enter number first"
+    }
+}
+
+console.log(givenOperations)
+//Backspace operation
+backspaceBtnEl.onclick=function(){
+    if (givenOperations!=""){
+        let n=givenOperations.length
+        let sString=enteredValues.substring(0,n-1)
+        valuesEl.textContent=sString
+        givenOperations=sString
     }
 }
 
