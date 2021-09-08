@@ -199,11 +199,16 @@ plusBtnEl.onclick=function(){
 
 //Square Root operation
 rootBtnEl.onclick=function(){
-    operations.first=enteredValues
-    enteredValues=""
-    operations.operator="root"
-    givenOperations+="**(0.5)"
-    valuesEl.textContent=givenOperations
+    if (enteredValues!=""){
+        operations.first=enteredValues
+        enteredValues=""
+        operations.operator="root"
+        givenOperations+="**(0.5)"
+        valuesEl.textContent=givenOperations
+    }
+    else{
+        answerEl.textContent="Please enter number first"
+    }
 }
 
 equalBtnEl.onclick=function(){
