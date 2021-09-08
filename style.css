@@ -1,0 +1,23 @@
+.container1{
+    background-color: #000000    ;
+    width: 100%;
+}
+.values{
+    color: #bebebe    ;
+    font-weight: bold;
+    font-size: 20px;
+}
+.bgBtn{
+    padding: 10px;
+    border-width: 0px;
+    color: #39d6d5;
+    background-color:transparent;   
+    font-size: 22px; 
+}
+.bgBtnnum{
+    padding: 10px;
+    border-width: 0px;
+    color:#bdbdbd    ;
+    background-color:transparent;  
+    font-size: 22px;   
+}
