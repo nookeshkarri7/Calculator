@@ -196,16 +196,16 @@ plusBtnEl.onclick=function(){
     }
 }
 
-console.log(givenOperations)
+
 //Backspace operation
-backspaceBtnEl.onclick=function(){
+/*backspaceBtnEl.onclick=function(){
     if (givenOperations!=""){
         let n=givenOperations.length
         let sString=enteredValues.substring(0,n-1)
         valuesEl.textContent=sString
         givenOperations=sString
     }
-}
+}*/
 
 equalBtnEl.onclick=function(){
     if (enteredValues!=""){
