@@ -6,7 +6,7 @@ let answerEl=document.getElementById("answer");
 //ROW --1
 let clearBtnEl=document.getElementById("clearBtn");
 let percentBtnEl=document.getElementById("percentBtn");
-let backspaceBtnEl=document.getElementById("backspaceBtn");
+let rootBtnEl=document.getElementById("rootBtn");
 let divideBtnEl=document.getElementById("divideBtn")
 
 //ROW --2
@@ -197,41 +197,40 @@ plusBtnEl.onclick=function(){
 }
 
 
-//Backspace operation
-/*backspaceBtnEl.onclick=function(){
-    if (givenOperations!=""){
-        let n=givenOperations.length
-        let sString=enteredValues.substring(0,n-1)
-        valuesEl.textContent=sString
-        givenOperations=sString
-    }
-}*/
+//Square Root operation
+rootBtnEl.onclick=function(){
+    operations.first=enteredValues
+    enteredValues=""
+    operations.operator="root"
+    givenOperations+="**(0.5)"
+    valuesEl.textContent=givenOperations
+}
 
 equalBtnEl.onclick=function(){
-    if (enteredValues!=""){
-        operations.second=enteredValues
-        enteredValues=""
-        if (operations.operator=="%"){
-            answerEl.textContent=`${parseInt(operations.first)*parseInt(operations.second)/100}`
-        }
-        else if (operations.operator=="divide"){
-            answerEl.textContent=`${parseInt(operations.first)/parseInt(operations.second)}`
-        }
-        else if (operations.operator=="mul"){
-            answerEl.textContent=`${parseInt(operations.first)*parseInt(operations.second)}`
-        }
-        else if (operations.operator=="minus"){
-            answerEl.textContent=`${parseInt(operations.first)-parseInt(operations.second)}`
-        }
-        else if (operations.operator=="plus"){
+    operations.second=enteredValues
+    enteredValues=""
+    if (operations.operator=="%"){
+        answerEl.textContent=`${parseInt(operations.first)*parseInt(operations.second)/100}`
+    }
+    else if (operations.operator=="divide"){
+        answerEl.textContent=`${parseInt(operations.first)/parseInt(operations.second)}`
+    }
+    else if (operations.operator=="mul"){
+        answerEl.textContent=`${parseInt(operations.first)*parseInt(operations.second)}`
+    }
+    else if (operations.operator=="minus"){
+        answerEl.textContent=`${parseInt(operations.first)-parseInt(operations.second)}`
+    }
+    else if (operations.operator=="plus"){
             answerEl.textContent=`${parseInt(operations.first)+parseInt(operations.second)}`
-        }
+    }
+    else if (operations.operator=="root"){
+        answerEl.textContent=`${parseInt(operations.first)**0.5}`
+    }
         
-        givenOperations=""
-    }
-    else{
-        answerEl.textContent="Please enter number first"
-    }
+    givenOperations=""
+    
+    
 }
 
 
